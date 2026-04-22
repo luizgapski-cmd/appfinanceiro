@@ -78,7 +78,7 @@ function DonutChart({ data, title }: { data: ChartData[]; title: string }) {
               ))}
             </Pie>
             <Tooltip
-              formatter={(value: number) => [formatCurrency(value), "Valor"]}
+              formatter={(value) => [formatCurrency(Number(value)), "Valor"]}
             />
             <Legend
               formatter={(value) => (
