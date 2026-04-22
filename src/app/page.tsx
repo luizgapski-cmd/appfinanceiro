@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   return (
@@ -12,12 +13,15 @@ export default function HomePage() {
         seu dinheiro está indo e tome melhores decisões.
       </p>
       <div className="mt-8 flex gap-4">
-        <Button asChild size="lg">
-          <Link href="/login">Entrar</Link>
-        </Button>
-        <Button asChild variant="outline" size="lg">
-          <Link href="/cadastro">Criar conta</Link>
-        </Button>
+        <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+          Entrar
+        </Link>
+        <Link
+          href="/cadastro"
+          className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+        >
+          Criar conta
+        </Link>
       </div>
     </main>
   );
